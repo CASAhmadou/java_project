@@ -4,11 +4,11 @@ import java.util.Date;
 
 public class Etudiant extends Personne{
 
-    private String  matricule;
-    private String  email;
-    private String  telephone;
-    private String  adresse;
-    private Date  dateNaiss;
+    protected String  matricule;
+    protected String  email;
+    protected String  telephone;
+    protected String  adresse;
+    protected Date  dateNaiss;
 
     public Date getDateNaiss() {
         return dateNaiss;

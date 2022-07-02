@@ -20,10 +20,10 @@ public class ServiceTableau implements IService{
 
     @Override
     public void ajouterPavillon(Pavillon pavillon) {
-        // TODO Auto-generated method stub
-        
+        pavillon.setNumero(001);
+        pavillon.setNbrEtages(4);
+        System.out.println(pavillon);
     }
-
     @Override
     public int getPositionPavillon(int id) {
         // TODO Auto-generated method stub

@@ -11,4 +11,5 @@ public interface IService {
     public void supprimerPavillon(int id);
     public int getPositionPavillon(int id);
     public void listerChambre();
+    //public void listerPavillon();
 }

@@ -1,15 +1,15 @@
 package models;
 
-public class Bourse {
+public class Boursier extends Etudiant {
     private int id;
-    private String libelleBourse;
+    private String typeBourse;
 
     public String getLibelleBourse() {
-        return libelleBourse;
+        return typeBourse;
     }
 
-    public void setLibelleBourse(String libelleBourse) {
-        this.libelleBourse = libelleBourse;
+    public void setLibelleBourse(String typeBourse) {
+        this.typeBourse = typeBourse;
     }
 
     public int getId() {
