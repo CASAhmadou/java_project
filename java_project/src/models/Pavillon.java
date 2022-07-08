@@ -4,6 +4,15 @@ public class Pavillon {
     private int id;
     private int numero;
     private int nbrEtages;
+    private Chambre[] chPavillon;
+
+    public Chambre[] getChPavillon() {
+        return chPavillon;
+    }
+
+    public void setChPavillon(Chambre[] chPavillon) {
+        this.chPavillon = chPavillon;
+    }
 
     public int getNbrEtages() {
         return nbrEtages;

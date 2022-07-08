@@ -12,6 +12,9 @@ public class ServiceTableau implements IService{
     private Chambre chambres[] = new Chambre[NOMBRE];
     private int indexChambre = 0;
 
+    private Pavillon pavillons[] = new Pavillon[NOMBRE];
+    private int indexPavillon = 0;
+
     @Override
     public void ajouterEtudiant(Etudiant etudiant) {
         
@@ -20,9 +23,13 @@ public class ServiceTableau implements IService{
 
     @Override
     public void ajouterPavillon(Pavillon pavillon) {
-        pavillon.setNumero(001);
-        pavillon.setNbrEtages(4);
-        System.out.println(pavillon);
+        if(indexPavillon < NOMBRE){
+            pavillons[indexPavillon] = pavillon;
+            indexPavillon++;
+       }
+       else{
+            System.out.println("Le tableau est rempli");
+       }
     }
     @Override
     public int getPositionPavillon(int id) {
@@ -58,6 +65,15 @@ public class ServiceTableau implements IService{
             }
         }
         
+    }
+
+    @Override
+    public void listerPavillon() {
+        for (Pavillon pavillon : pavillons) {
+            if(pavillon != null){
+                System.out.println(pavillon);
+            }
+        }
     }
     
 }
