@@ -28,7 +28,7 @@ public class ServiceTableau implements IService{
             indexPavillon++;
        }
        else{
-            System.out.println("Le tableau est rempli");
+            System.out.println("Tableau rempli");
        }
     }
     @Override
@@ -51,7 +51,7 @@ public class ServiceTableau implements IService{
             indexChambre++;
        }
        else{
-            System.out.println("Le tableau est rempli");
+            System.out.println("Tableau rempli");
        }
         
     }

@@ -1,10 +1,11 @@
+package view;
 import java.util.Scanner;
 
 import models.Pavillon;
 import services.IService;
 import services.ServiceTableau;
 
-public class App {
+public class View {
     public static void main(String[] args) throws Exception {
 
        // System.out.println("Hello, World!");
@@ -51,6 +52,7 @@ public class App {
             case 0: System.out.println("1- Chambre");
             break;
         }
-    } while(choix!=0);
+    } 
+    while(choix!=0);
 }
 }
