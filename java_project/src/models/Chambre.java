@@ -2,15 +2,22 @@ package models;
 
 public class Chambre {
 
+    private static int nbr;
     private TypeChambre type;
     private int id;
     private String numero;
     private String etage;
-
+    private String etat;
     private Pavillon pavillon;
     private ResponsablePedagogique resp;
 
-  
+
+    public Chambre(){
+        nbr++;
+        id=nbr;
+        numero = "ch000"+id;
+        etat = "disponible";
+    }
 
     public String getEtage() {
         return etage;
@@ -38,8 +45,8 @@ public class Chambre {
 
     @Override
     public String toString() {
-        return "Chambre [etage=" + etage + ", id=" + id + ", numero=" + numero + ", pavillon=" + pavillon + ", resp="
-                + resp + ", type=" + type + "]";
+        return "ID:" + id + ", nombre d'etage " + etage + ", numero=" + numero + ", pavillon=" + pavillon + ", etat chambre="
+                + etat + ", type de chambre " + type + " ";
     }
 
     public TypeChambre getType() {
@@ -65,5 +72,11 @@ public class Chambre {
     public void setResp(ResponsablePedagogique resp) {
         this.resp = resp;
     }
-    
+    public String getEtat() {
+        return etat;
+    }
+
+    public void setEtat(String etat) {
+        this.etat = etat;
+    }
 }

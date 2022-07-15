@@ -2,44 +2,39 @@ package services;
 
 import models.Etudiant;
 import models.Pavillon;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import models.Chambre;
 
 
-public class ServiceTableau implements IService{
+public class ServiceList implements IService{
 
-    public final int NOMBRE = 10;
-
-    private Chambre chambres[] = new Chambre[NOMBRE];
-    private int indexChambre = 0;
-
-    private Pavillon pavillons[] = new Pavillon[NOMBRE];
-    private int indexPavillon = 0;
-
+    private List<Chambre> chambres;
+    private List<Pavillon> pavillons;
+    private List<Etudiant> etudiants;
+   
+    public ServiceList(List<Chambre> chambres,List<Pavillon> pavillons,List<Etudiant> etudiants){
+        this.chambres = chambres;
+        this.pavillons = pavillons;
+        this.etudiants = etudiants;
+    }
     @Override
     public void ajouterEtudiant(Etudiant etudiant) {
-        
-        
+        etudiants.add(etudiant);
     }
 
     @Override
     public void ajouterPavillon(Pavillon pavillon) {
-        if(indexPavillon < NOMBRE){
-            pavillons[indexPavillon] = pavillon;
-            indexPavillon++;
-       }
-       else{
-            System.out.println("Tableau plein");
-       }
-        
+        pavillons.add(pavillon);
     }
     @Override
     public void listerPavillon() {
-        
         for (Pavillon pavillon : pavillons) {
-            if(pavillon != null){
-                System.out.println(pavillon);
-            }
+            System.out.println(pavillon);
         }
+       
     }
 
     @Override
@@ -55,32 +50,21 @@ public class ServiceTableau implements IService{
 
     @Override
     public void supprimerPavillon(int id) {
-        //removeElement(chambres, id);
-        
+        pavillons.remove(id);
     }
 
     @Override
     public void ajouterChambre(Chambre chambre) {
 
-       if(indexChambre < NOMBRE){
-            chambres[indexChambre] = chambre;
-            indexChambre++;
-       }
-       else{
-            System.out.println("Tableau plein");
-       }
-        
+        chambres.add(chambre);
     }
 
     @Override
     public void listerChambre() {
-        
+
         for (Chambre chambre : chambres) {
-            if(chambre != null){
-                System.out.println(chambre);
-            }
+            System.out.println(chambre);
         }
-        
     }
 
     @Override
@@ -102,12 +86,13 @@ public class ServiceTableau implements IService{
                 c.setEtat("archive");
             }
         }
-        
     }
 
     @Override
     public void listerEtudiant() {
-        // TODO Auto-generated method stub
+        for (Etudiant etudiant : etudiants) {
+            System.out.println(etudiant);
+        }
         
     }
 

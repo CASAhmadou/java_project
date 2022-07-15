@@ -5,8 +5,12 @@ public class Personne {
     protected int id;
     protected String nom;
     protected String prenom;
+    private static int nbr;
+
 
     public Personne() {
+        nbr++;
+        id=nbr;
     }
 
     public String getNom() {
@@ -31,5 +35,10 @@ public class Personne {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    @Override
+    public String toString() {
+        return "Personne [id=" + id + ", nom=" + nom + ", prenom=" + prenom + "]";
     }
 }
